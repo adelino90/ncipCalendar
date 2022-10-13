@@ -1,42 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Session;
 use App\Models\User;
+use Hash;
+use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AuthController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        if(Auth::check()){
-            return view('home');
-        }
-        return Redirect('login');
-    }
+        return view('auth.loginForm');
+    } 
 
-    public function loginForm()
-    {
-        return view('index');
-    }
-    public function login(Request $request){
+    public function loginSubmit(Request $request){
+ 
         $validate = Validator::make($request->all(),[
             'username' => 'required',
             'password' => 'required'
@@ -65,4 +45,12 @@ class HomeController extends Controller
             'message' => 'no-credential',
         ]);
     }
+
+    public function logout() {
+        Session::flush();
+        Auth::logout();
+  
+        return Redirect('login');
+    }
 }
+

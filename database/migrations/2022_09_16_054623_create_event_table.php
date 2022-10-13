@@ -19,13 +19,13 @@ class CreateEventTable extends Migration
             $table->unsignedInteger('eventTypeId')->nullable();
             $table->foreign('eventTypeId')->references('eventTypeId')
                             ->on('event_type')
-                            ->onDelete('cascade');
-            $table->string('eventOtherType',100);
-            $table->string('eventDetails',250);
-            $table->string('eventZoomLink',1000);
+                            ->onDelete('cascade')->nullable();
+            $table->string('eventOtherType',100)->nullable();
+            $table->string('eventDetails',250)->nullable();
+            $table->string('eventZoomLink',1000)->nullable();
             $table->date('eventDateFrom');
             $table->date('eventDateTo');
-            $table->string('eventNotificationSchedule',25);
+            $table->string('eventNotificationSchedule',25)->nullable();
             $table->timestamps();
         });
     }

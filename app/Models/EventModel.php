@@ -9,4 +9,6 @@ class EventModel extends Model
 {
     use HasFactory;
     protected $table = 'events';
+
+    protected $fillable = ['eventName','eventDateFrom','eventDateTo','eventTypeId','eventDetails','eventNotificationSchedule','eventZoomLink'];
 }
