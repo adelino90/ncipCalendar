@@ -71,7 +71,7 @@ const AddCalendar= ({ onAddEvent }) => {
         <div className='form-group'>
             <label>Event</label>
             <input type='text' className='form-control' placeholder='Add Event' value ={text} onChange={(e) => setText(e.target.value)}/>
-            <div style={{color: "red"}}>{validator.current.message('text', text, 'required|alpha')}</div>
+            <div style={{color: "red"}}>{validator.current.message('text', text, 'required')}</div>
         </div>
         <div className='form-group'>
             <label>Day & Time From</label>

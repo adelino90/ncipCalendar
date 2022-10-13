@@ -20113,7 +20113,7 @@ var AddCalendar = function AddCalendar(_ref) {
         style: {
           color: "red"
         },
-        children: validator.current.message('text', text, 'required|alpha')
+        children: validator.current.message('text', text, 'required')
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "form-group",
