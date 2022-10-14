@@ -23,7 +23,7 @@ class UserTableSeeder extends Seeder {
                     'middlename'=>'Razon',
                     'lastname'=>'Justo'
                     ]);
-            User::create(['userUuid'=>'01d68bcf-ec62-4f56-ab23-26b833ce861c',
+            User::create(['userUuid'=>'01d64bcf-ec62-4f56-ab23-26b933ce861c',
                     'username' => 'rjteves91',
                     'password' => '$2y$10$wJvyD/BYPZlNxDeuAuaFxO3deUnZlCdxvycBLdpS/33moe4DB/GtW',
                     'email'=>'jesus.reyteves@gmail.com',
