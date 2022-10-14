@@ -6,6 +6,9 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\RoleModel;
+use Illuminate\Support\Facades\Hash;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
 class UserTableSeeder extends Seeder {
  
@@ -13,9 +16,9 @@ class UserTableSeeder extends Seeder {
     {
         DB::table('users')->delete();
  
-        User::create(['userUuid'=>'01d68bcf-ec62-4f56-ab23-26b833ce861c',
+        User::create(['userUuid'=>Uuid::uuid4(),
                     'username' => 'adelino90',
-                    'password' => '$2y$10$wJvyD/BYPZlNxDeuAuaFxO3deUnZlCdxvycBLdpS/33moe4DB/GtW',
+                    'password' => Hash::make('admin@123'),
                     'email'=>'adelinojusto911@gmail.com',
                     'roleId'=>RoleModel::where('roleName', 'Sys Admin')->first()->roleId,
                     'contactNo'=>'09327440704',
@@ -23,9 +26,9 @@ class UserTableSeeder extends Seeder {
                     'middlename'=>'Razon',
                     'lastname'=>'Justo'
                     ]);
-            User::create(['userUuid'=>'01d64bcf-ec62-4f56-ab23-26b933ce861c',
+            User::create(['userUuid'=>Uuid::uuid4(),
                     'username' => 'rjteves91',
-                    'password' => '$2y$10$wJvyD/BYPZlNxDeuAuaFxO3deUnZlCdxvycBLdpS/33moe4DB/GtW',
+                    'password' => Hash::make('admin@123'),
                     'email'=>'jesus.reyteves@gmail.com',
                     'roleId'=>RoleModel::where('roleName', 'Sys Admin')->first()->roleId,
                     'contactNo'=>'09327440704',

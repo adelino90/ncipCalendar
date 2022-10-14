@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\EventTypeModel;
 
+
 class EventTypeTableSeeder extends Seeder {
  
     public function run()
