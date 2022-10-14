@@ -51,7 +51,6 @@ import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom'
         }
       }
         return (
-            <div className="container">
                 <Router>
                     <Routes>
                             <Route path='/' element={
@@ -89,7 +88,6 @@ import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom'
                    
                 </Router>
                   
-            </div>
         );
     
 }
