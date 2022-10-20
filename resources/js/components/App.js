@@ -51,8 +51,9 @@ import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom'
         }
       }
         return (
-                <Router>
-                    <Routes>
+                
+                    <>
+                      <Routes>
                             <Route path='/' element={
                             <>
                                 <div className="row justify-content-center">
@@ -85,8 +86,8 @@ import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom'
                             />
                             <Route path='/about' element={<About />}/>
                         </Routes>
-                   
-                </Router>
+                    </>
+               
                   
         );
     

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserAccountsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,12 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/', [HomeController::class, 'index']);
 
 //Auth::routes();
-
+Route::get('/userAccounts', [UserAccountsController::class, 'index'])->name('userAccounts');
+Route::get('/getAlluserAccounts', [UserAccountsController::class, 'getAlluserAccounts']);
+Route::get('/getAllSelectValues', [UserAccountsController::class, 'getAllSelectValues']);
+Route::get('/getUser/{Uuid}', [UserAccountsController::class, 'getUser']);
+Route::post('/submitUserAccount', [UserAccountsController::class, 'submitUserAccounts']);
+Route::post('/submitUserAccountUpdate', [UserAccountsController::class, 'submitUserAccountUpdate']);
 
 Route::get('/getAllEvents', [App\Http\Controllers\EventController::class, 'getAllEvents']);
 Route::get('/getAllEventTypes', [App\Http\Controllers\EventController::class, 'getAllEventTypes']);

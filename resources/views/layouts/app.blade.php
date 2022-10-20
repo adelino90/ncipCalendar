@@ -60,6 +60,14 @@
                                 </a>
 
                                 <div id = "ncipCalendarNavDropdown" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                @if (Auth::user()->role->roleName =='Sys Admin')
+                                    <a class="dropdown-item" href="">
+                                        {{ __('System Settings') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('userAccounts') }}">
+                                        {{ __('User Accounts') }}
+                                    </a>
+                                @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
