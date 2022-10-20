@@ -72,6 +72,8 @@ class UserAccountsController extends Controller
             'middlename'=>$request->input('middlename'),
             'lastname'=>$request->input('lastname'),
         ];
+        if( $request->input('password') !='')
+            $UserData['password'] = Hash::make($request->input('password'));
 
         $updateUser = User::where('userUuid',$request->input('Uuid'))->update($UserData);
         return $updateUser;

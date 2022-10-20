@@ -21207,16 +21207,11 @@ var EditAccountForm = function EditAccountForm(_ref) {
               type: "password",
               className: "form-control",
               id: "password",
-              value: password,
               onChange: function onChange(e) {
                 return setPassword(e.target.value);
               },
-              placeholder: "Password"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              style: {
-                color: "red"
-              },
-              children: validator.current.message('password', password, 'required')
+              placeholder: "Password",
+              autoComplete: "new-password"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
             type: "submit",

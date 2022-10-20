@@ -148,11 +148,10 @@ const EditAccountForm = ({refreshUsers})=> {
                     </div>
 
                     <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" className="form-control" id="password" value={password} onChange={(e) =>setPassword(e.target.value)} placeholder="Password"/>
-                    <div style={{color: "red"}}>{validator.current.message('password', password, 'required')}</div>
+                        <label htmlFor="password">Password</label>
+                        <input type="password" className="form-control" id="password"  onChange={(e) =>setPassword(e.target.value)} placeholder="Password" autoComplete="new-password"  />
+                     
                     </div>
-
               
 
                     <button type="submit" className="btn btn-primary">Update</button>
