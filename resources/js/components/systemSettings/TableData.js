@@ -15,7 +15,7 @@ const calculateRange = (data, rowsPerPage) => {
   };
 
 
-  const UserAccountsTableData = (data, page, rowsPerPage) => {
+  const TableData = (data, page, rowsPerPage) => {
     const [tableRange, setTableRange] = useState([]);
     const [slice, setSlice] = useState([]);
   
@@ -30,4 +30,4 @@ const calculateRange = (data, rowsPerPage) => {
     return { slice, range: tableRange };
   };
 
- export default UserAccountsTableData;
+ export default TableData;

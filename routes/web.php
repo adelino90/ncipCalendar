@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserAccountsController;
+use App\Http\Controllers\SystemSettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,12 @@ Route::get('/getAllSelectValues', [UserAccountsController::class, 'getAllSelectV
 Route::get('/getUser/{Uuid}', [UserAccountsController::class, 'getUser']);
 Route::post('/submitUserAccount', [UserAccountsController::class, 'submitUserAccounts']);
 Route::post('/submitUserAccountUpdate', [UserAccountsController::class, 'submitUserAccountUpdate']);
+
+
+Route::get('/systemSettings', [SystemSettingsController::class, 'index'])->name('systemSettings');
+Route::get('/getAllOffices', [SystemSettingsController::class, 'getAllOffices']);
+Route::get('/getAllBureausOffices', [SystemSettingsController::class, 'getAllBureausOffices']);
+
 
 Route::get('/getAllEvents', [App\Http\Controllers\EventController::class, 'getAllEvents']);
 Route::get('/getAllEventTypes', [App\Http\Controllers\EventController::class, 'getAllEventTypes']);

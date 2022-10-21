@@ -83,6 +83,7 @@ const EditAccountForm = ({refreshUsers})=> {
                 )
             .catch(error => {
                 console.log("ERROR:: ",error.response.data);
+                toastr.error("ERROR:: ",error.response.data);
                 });
                 validator.current.hideMessages();
         }else {

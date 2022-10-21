@@ -61,7 +61,7 @@
 
                                 <div id = "ncipCalendarNavDropdown" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 @if (Auth::user()->role->roleName =='Sys Admin')
-                                    <a class="dropdown-item" href="">
+                                    <a class="dropdown-item" href="{{ route('systemSettings') }}">
                                         {{ __('System Settings') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('userAccounts') }}">

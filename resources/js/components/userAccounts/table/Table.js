@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import UserAccountsTableData from "../UserAccountsTableData";
+import TableData from "../TableData";
 import styles from "./Table.module.css";
 import TableFooter from "./tableFooter/TableFooter";
 import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom' 
 
 const Table = ({ data, rowsPerPage }) => {
   const [page, setPage] = useState(1);
-  const { slice, range } = UserAccountsTableData(data, page, rowsPerPage);
+  const { slice, range } = TableData(data, page, rowsPerPage);
   return (
     <>
     <Link to="/AddNewUserAccount" className="btn btn-secondary">Add New User</Link>

@@ -66,6 +66,7 @@ const AddAccountForm = ({refreshUsers})=> {
                 )
             .catch(error => {
                 console.log("ERROR:: ",error.response.data);
+                toastr.error("ERROR:: ",error.response.data);
                 });
                 validator.current.hideMessages();
         }else {
@@ -132,7 +133,7 @@ const AddAccountForm = ({refreshUsers})=> {
 
                     <div className="form-group">
                     <label htmlFor="password">Password</label>
-                    <input type="password" className="form-control" id="password" value={password} onChange={(e) =>setPassword(e.target.value)} placeholder="Password"/>
+                    <input type="password" className="form-control" id="password" value={password} onChange={(e) =>setPassword(e.target.value)} placeholder="Password" autoComplete="new-password"/>
                     <div style={{color: "red"}}>{validator.current.message('password', password, 'required')}</div>
                     </div>
 
