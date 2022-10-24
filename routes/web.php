@@ -35,6 +35,11 @@ Route::post('/submitUserAccountUpdate', [UserAccountsController::class, 'submitU
 Route::get('/systemSettings', [SystemSettingsController::class, 'index'])->name('systemSettings');
 Route::get('/getAllOffices', [SystemSettingsController::class, 'getAllOffices']);
 Route::get('/getAllBureausOffices', [SystemSettingsController::class, 'getAllBureausOffices']);
+Route::get('/getBureau/{bureauId}', [SystemSettingsController::class, 'getBureau']);
+Route::get('/getOffice/{officeId}', [SystemSettingsController::class, 'getOffice']);
+Route::post('/submitOffice', [SystemSettingsController::class, 'submitOffice']);
+Route::post('/submitOfficeUpdate', [SystemSettingsController::class, 'submitOfficeUpdate']);
+Route::post('/submitBureauUpdate', [SystemSettingsController::class, 'submitBureauUpdate']);
 
 
 Route::get('/getAllEvents', [App\Http\Controllers\EventController::class, 'getAllEvents']);

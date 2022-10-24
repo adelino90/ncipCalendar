@@ -9,4 +9,6 @@ class BureauRegionModel extends Model
 {
     use HasFactory;
     protected $table = 'bureau_region';
+
+    protected $fillable = ['bureauName','description',];
 }

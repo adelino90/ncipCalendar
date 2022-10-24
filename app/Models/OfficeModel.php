@@ -10,4 +10,8 @@ class OfficeModel extends Model
     use HasFactory;
 
     protected $table = 'office';
+
+    protected $fillable = ['bureauId','shortName','longName','officeType','officeCode'];
+
+
 }

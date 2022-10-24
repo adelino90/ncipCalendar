@@ -28,7 +28,7 @@ const Table = ({ data, rowsPerPage, type }) => {
                 <td className={styles.tableCell}>{el.shortName}</td>
                 <td className={styles.tableCell}>{el.officeCode}</td>
                 <td className={styles.tableCell}>{el.officeType}</td>
-                <td className={styles.tableCell}><Link to={"/EditOffice/"+el.userUuid} className="btn btn-primary">Edit</Link></td>
+                <td className={styles.tableCell}><Link to={"/EditOffice/"+el.officeId} className="btn btn-primary">Edit</Link></td>
               </tr>
             ))}
           </tbody>
@@ -39,7 +39,7 @@ const Table = ({ data, rowsPerPage, type }) => {
     else
       return (
         <>
-        <Link to="/AddNewOffice" className="btn btn-secondary">Add New Bureau</Link>
+        <Link to="/AddNewBureau" className="btn btn-secondary">Add New Bureau</Link>
           <table className={styles.table}>
             <thead className={styles.tableRowHeader}>
               <tr>
@@ -53,7 +53,7 @@ const Table = ({ data, rowsPerPage, type }) => {
                 <tr className={styles.tableRowItems} key={el.bureauId}>
                   <td className={styles.tableCell}>{el.bureauName}</td>
                   <td className={styles.tableCell}>{el.description}</td>
-                  <td className={styles.tableCell}><Link to={"/EditOffice/"+el.userUuid} className="btn btn-primary">Edit</Link></td>
+                  <td className={styles.tableCell}><Link to={"/EditBureau/"+el.bureauId} className="btn btn-primary">Edit</Link></td>
                 </tr>
               ))}
             </tbody>

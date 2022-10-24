@@ -1,6 +1,11 @@
 import React, { useState,useEffect } from "react";
 import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom' 
 import Table from "./table/Table";
+import AddOfficeForm from "./offices/form/AddOfficeForm";
+import EditOfficeForm from "./offices/form/EditOfficeForm";
+import AddBureauForm from "./bureaus/form/AddBureauForm";
+import EditBureauForm from "./bureaus/form/EditBureauForm";
+
 import styles from "./css/table/Table.css";
 
 
@@ -19,13 +24,33 @@ const SystemSettings = ()=> {
         axios.all([officesGet,bureausGet]).then(axios.spread(function(response,response2) {
             setOffices(response.data)
             setBureaus(response2.data)
-            console.log(response2)
+        
         })).catch(error => {
             console.log("ERROR:: ",error.response.data);
             toastr.error("ERROR:: ",error.response.data);
         });
      }
 
+     const refreshOffices = ()=>{
+        axios.get('/getAllOffices', {})
+        .then(function (response) {
+            setOffices(response.data)
+              }
+            )
+        .catch(error => {
+            console.log("ERROR:: ",error.response.data);
+            });
+     }
+     const refreshBurueaus = ()=>{
+        axios.get('/getAllBureausOffices', {})
+        .then(function (response) {
+            setBureaus(response.data)
+              }
+            )
+        .catch(error => {
+            console.log("ERROR:: ",error.response.data);
+            });
+     }
 
     return (
                         <Routes>
@@ -46,14 +71,14 @@ const SystemSettings = ()=> {
                                                     <div className="tab-pane fade show active" id="nav-offices" role="tabpanel" aria-labelledby="nav-offices-tab">
                                                         <main className={styles.container}>
                                                             <div className={styles.wrapper}>
-                                                            <Table data={offices} rowsPerPage={4}  type = {'offices'}/>
+                                                            <Table data={offices} rowsPerPage={10}  type = {'offices'}/>
                                                             </div>
                                                         </main>
                                                     </div>
                                                     <div className="tab-pane fade" id="nav-bureaus" role="tabpanel" aria-labelledby="nav-bureaus-tab">
                                                         <main className={styles.container}>
                                                             <div className={styles.wrapper}>
-                                                            <Table data={bureaus} rowsPerPage={4}  type = {'bureaus'}/>
+                                                            <Table data={bureaus} rowsPerPage={10}  type = {'bureaus'}/>
                                                             </div>
                                                         </main>
                                                     </div>
@@ -63,7 +88,30 @@ const SystemSettings = ()=> {
                                 </>
                                 }
                                 />  
-        
+                                <Route path='/AddNewOffice' element={
+                                    <>
+                                    <AddOfficeForm refreshOffices = {refreshOffices}/>
+                                    </>
+                                }
+                                />
+                                <Route path='/AddNewBureau' element={
+                                    <>
+                                    <AddBureauForm refreshBurueaus = {refreshBurueaus}/>
+                                    </>
+                                }
+                                />
+                                <Route exact path='/EditBureau/:bureauId' element={
+                                <> 
+                                    <EditBureauForm refreshBurueaus = {refreshBurueaus}/>
+                                </>
+                                }
+                                />
+                                <Route exact path='/EditOffice/:officeId' element={
+                                <> 
+                                    <EditOfficeForm refreshOffices = {refreshOffices}/>
+                                </>
+                                }
+                                />
                         </Routes>
    
         
