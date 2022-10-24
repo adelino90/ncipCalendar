@@ -20433,7 +20433,7 @@ var SystemSettings = function SystemSettings() {
                   role: "tab",
                   "aria-controls": "nav-bureaus",
                   "aria-selected": "false",
-                  children: "Bureaus"
+                  children: "Bureaus/ROs/POs/CSCs"
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
@@ -20722,6 +20722,11 @@ var AddBureauForm = function AddBureauForm(_ref) {
               },
               placeholder: "Enter Office Long Name",
               autoComplete: "off"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              style: {
+                color: "red"
+              },
+              children: validator.current.message('description', description, 'required')
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
             type: "submit",
@@ -21562,7 +21567,7 @@ var Table = function Table(_ref) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
             className: _Table_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].tableHeader,
-            children: "Bureau"
+            children: "Bureau/Regional Office/Provincial Office/CSC"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
             className: _Table_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].tableHeader,
             children: "Description"

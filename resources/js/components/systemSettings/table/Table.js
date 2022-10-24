@@ -43,7 +43,7 @@ const Table = ({ data, rowsPerPage, type }) => {
           <table className={styles.table}>
             <thead className={styles.tableRowHeader}>
               <tr>
-                <th className={styles.tableHeader}>Bureau</th>
+                <th className={styles.tableHeader}>Bureau/Regional Office/Provincial Office/CSC</th>
                 <th className={styles.tableHeader}>Description</th>
                 <th className={styles.tableHeader}>Action</th>
               </tr>

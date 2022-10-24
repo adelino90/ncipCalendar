@@ -64,7 +64,7 @@ const SystemSettings = ()=> {
                                             <nav>
                                                 <div className="nav nav-tabs" id="nav-tab" role="tablist">
                                                     <button className="nav-link active" id="nav-offices-tab" data-bs-toggle="tab" data-bs-target="#nav-offices" type="button" role="tab" aria-controls="nav-offices" aria-selected="true">Offices</button>
-                                                    <button className="nav-link" id="nav-bureaus-tab" data-bs-toggle="tab" data-bs-target="#nav-bureaus" type="button" role="tab" aria-controls="nav-bureaus" aria-selected="false">Bureaus</button>
+                                                    <button className="nav-link" id="nav-bureaus-tab" data-bs-toggle="tab" data-bs-target="#nav-bureaus" type="button" role="tab" aria-controls="nav-bureaus" aria-selected="false">Bureaus/ROs/POs/CSCs</button>
                                                 </div>
                                                 </nav>
                                                 <div className="tab-content" id="nav-tabContent">

@@ -37,11 +37,13 @@ const AddOfficeForm = ({refreshOffices})=> {
 
     const submitOffice = (e)=>{
         e.preventDefault();    
-        var data = {bureauId:bureauId,
+        var data = {
+            bureauId:bureauId,
             shortName:shortName,
             longName: longName,
             officeType:officeType,
-            officeCode:officeCode}
+            officeCode:officeCode
+        }
 
             if (validator.current.allValid()) {
       

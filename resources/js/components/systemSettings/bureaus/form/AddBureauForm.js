@@ -55,6 +55,7 @@ const AddBureauForm = ({refreshBurueaus})=> {
 
                             <label htmlFor="description">Description</label>
                             <textarea className="form-control" value={description}  onChange={(e) =>setDescription(e.target.value)} placeholder="Enter Office Long Name" autoComplete="off" />
+                            <div style={{color: "red"}}>{validator.current.message('description', description, 'required')}</div>
                         </div>
 
 
